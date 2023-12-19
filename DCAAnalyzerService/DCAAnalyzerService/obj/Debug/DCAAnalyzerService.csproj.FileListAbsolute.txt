@@ -1,0 +1,7 @@
+C:\Users\Ball\Desktop\DCAAnalyzer\DCAAnalyzerService\DCAAnalyzerService\bin\DCAAnalyzerService.dll.config
+C:\Users\Ball\Desktop\DCAAnalyzer\DCAAnalyzerService\DCAAnalyzerService\bin\DCAAnalyzerService.dll
+C:\Users\Ball\Desktop\DCAAnalyzer\DCAAnalyzerService\DCAAnalyzerService\bin\DCAAnalyzerService.pdb
+C:\Users\Ball\Desktop\DCAAnalyzer\DCAAnalyzerService\DCAAnalyzerService\obj\Debug\DCAAnalyzerService.csproj.AssemblyReference.cache
+C:\Users\Ball\Desktop\DCAAnalyzer\DCAAnalyzerService\DCAAnalyzerService\obj\Debug\DCAAnalyzerService.csproj.CoreCompileInputs.cache
+C:\Users\Ball\Desktop\DCAAnalyzer\DCAAnalyzerService\DCAAnalyzerService\obj\Debug\DCAAnalyzerService.dll
+C:\Users\Ball\Desktop\DCAAnalyzer\DCAAnalyzerService\DCAAnalyzerService\obj\Debug\DCAAnalyzerService.pdb
