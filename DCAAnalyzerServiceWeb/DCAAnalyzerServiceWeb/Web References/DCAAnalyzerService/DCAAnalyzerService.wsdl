@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CalculateInitialInvestment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="monthlyDCA" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateInitialInvestmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateInitialInvestmentResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateSharesPurchased">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="monthlyDCA" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateSharesPurchasedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateSharesPurchasedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateCurrentInvestment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="totalShares" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastprice" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateCurrentInvestmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateCurrentInvestmentResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateAverageCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="totalInvestment" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalShares" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateAverageCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateAverageCostResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateReturnsDCA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currentInvestment" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="monthlyDCA" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateReturnsDCAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateReturnsDCAResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateReturns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currentInvestment" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="initialInvestment" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateReturnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateReturnsResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateReturnsPercentage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="returns" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="initialInvestment" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateReturnsPercentageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateReturnsPercentageResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculateInitialInvestmentSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateInitialInvestment" />
+  </wsdl:message>
+  <wsdl:message name="CalculateInitialInvestmentSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateInitialInvestmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateSharesPurchasedSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateSharesPurchased" />
+  </wsdl:message>
+  <wsdl:message name="CalculateSharesPurchasedSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateSharesPurchasedResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateCurrentInvestmentSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateCurrentInvestment" />
+  </wsdl:message>
+  <wsdl:message name="CalculateCurrentInvestmentSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateCurrentInvestmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateAverageCostSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateAverageCost" />
+  </wsdl:message>
+  <wsdl:message name="CalculateAverageCostSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateAverageCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateReturnsDCASoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateReturnsDCA" />
+  </wsdl:message>
+  <wsdl:message name="CalculateReturnsDCASoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateReturnsDCAResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateReturnsSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateReturns" />
+  </wsdl:message>
+  <wsdl:message name="CalculateReturnsSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateReturnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateReturnsPercentageSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateReturnsPercentage" />
+  </wsdl:message>
+  <wsdl:message name="CalculateReturnsPercentageSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateReturnsPercentageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DCAAnalyzerServiceSoap">
+    <wsdl:operation name="CalculateInitialInvestment">
+      <wsdl:input message="tns:CalculateInitialInvestmentSoapIn" />
+      <wsdl:output message="tns:CalculateInitialInvestmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateSharesPurchased">
+      <wsdl:input message="tns:CalculateSharesPurchasedSoapIn" />
+      <wsdl:output message="tns:CalculateSharesPurchasedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCurrentInvestment">
+      <wsdl:input message="tns:CalculateCurrentInvestmentSoapIn" />
+      <wsdl:output message="tns:CalculateCurrentInvestmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateAverageCost">
+      <wsdl:input message="tns:CalculateAverageCostSoapIn" />
+      <wsdl:output message="tns:CalculateAverageCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateReturnsDCA">
+      <wsdl:input message="tns:CalculateReturnsDCASoapIn" />
+      <wsdl:output message="tns:CalculateReturnsDCASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateReturns">
+      <wsdl:input message="tns:CalculateReturnsSoapIn" />
+      <wsdl:output message="tns:CalculateReturnsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateReturnsPercentage">
+      <wsdl:input message="tns:CalculateReturnsPercentageSoapIn" />
+      <wsdl:output message="tns:CalculateReturnsPercentageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DCAAnalyzerServiceSoap" type="tns:DCAAnalyzerServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateInitialInvestment">
+      <soap:operation soapAction="http://tempuri.org/CalculateInitialInvestment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateSharesPurchased">
+      <soap:operation soapAction="http://tempuri.org/CalculateSharesPurchased" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCurrentInvestment">
+      <soap:operation soapAction="http://tempuri.org/CalculateCurrentInvestment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateAverageCost">
+      <soap:operation soapAction="http://tempuri.org/CalculateAverageCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateReturnsDCA">
+      <soap:operation soapAction="http://tempuri.org/CalculateReturnsDCA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateReturns">
+      <soap:operation soapAction="http://tempuri.org/CalculateReturns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateReturnsPercentage">
+      <soap:operation soapAction="http://tempuri.org/CalculateReturnsPercentage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DCAAnalyzerServiceSoap12" type="tns:DCAAnalyzerServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateInitialInvestment">
+      <soap12:operation soapAction="http://tempuri.org/CalculateInitialInvestment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateSharesPurchased">
+      <soap12:operation soapAction="http://tempuri.org/CalculateSharesPurchased" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCurrentInvestment">
+      <soap12:operation soapAction="http://tempuri.org/CalculateCurrentInvestment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateAverageCost">
+      <soap12:operation soapAction="http://tempuri.org/CalculateAverageCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateReturnsDCA">
+      <soap12:operation soapAction="http://tempuri.org/CalculateReturnsDCA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateReturns">
+      <soap12:operation soapAction="http://tempuri.org/CalculateReturns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateReturnsPercentage">
+      <soap12:operation soapAction="http://tempuri.org/CalculateReturnsPercentage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DCAAnalyzerService">
+    <wsdl:port name="DCAAnalyzerServiceSoap" binding="tns:DCAAnalyzerServiceSoap">
+      <soap:address location="http://localhost:57230/DCAAnalyzerService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DCAAnalyzerServiceSoap12" binding="tns:DCAAnalyzerServiceSoap12">
+      <soap12:address location="http://localhost:57230/DCAAnalyzerService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
